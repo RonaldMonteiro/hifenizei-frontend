@@ -1,0 +1,175 @@
+.Header {
+	min-height: 100vh;
+	background-color: #f4f0f0;
+	display: flex;
+	flex-direction: column;
+	font-size: calc(10px + 2vmin);
+	color: rgb(56, 56, 56);
+}
+ 
+.Footer {
+	height: 10vh;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation: animFooter 4s;
+}
+
+@keyframes animFooter {
+	0% {
+	 transform: translateX(-2000px);
+
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+.opacity {
+	animation: animButtonText 7s;
+
+}
+ 
+.ButtonText {
+	border: none;
+	background-color: transparent;
+	font-size: 16px;
+	cursor: pointer;
+	display: inline-block;
+	animation: animButtonText 7s;
+	
+}
+
+@keyframes animButtonText {
+	0% {
+	 opacity: 0.0;
+	}
+	90% {
+		opacity: 0.0;
+	}
+}
+  
+.ButtonText:hover {
+	background: rgb(163, 161, 161); 
+	border-radius: 15px;
+
+	
+
+}
+  
+.BoxButton {
+	padding-left: 40px;
+}
+  
+.BoxFooterOne {
+	flex: 100%;
+	height: 10vh;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-top: 2px solid #adadad;
+	z-index: 2;
+}
+  
+.BoxFooterTwo {
+	flex: 100%;
+	height: 10vh;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	border-top: 2px solid #adadad;
+	padding-right: 30px;
+	z-index: 2;
+}
+
+.ImageTop  {
+	height: 55px;
+	margin-top: 10px;
+}
+
+.Floating {
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+}
+
+.Floating:hover, .Floating:focus, .Floating:active {
+	-webkit-animation-name: Floating-float, Floating;
+	animation-name: Floating-float, Floating;
+	-webkit-animation-duration: .3s, 1.5s;
+	animation-duration: .3s, 1.5s;
+	-webkit-animation-delay: 0s, .3s;
+	animation-delay: 0s, .3s;
+	-webkit-animation-timing-function: ease-out, ease-in-out;
+	animation-timing-function: ease-out, ease-in-out;
+	-webkit-animation-iteration-count: 1, infinite;
+	animation-iteration-count: 1, infinite;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-direction: normal, alternate;
+	animation-direction: normal, alternate;
+}
+  
+
+@-webkit-keyframes Floating {
+	0% {
+	  -webkit-transform: translateY(-8px);
+	  transform: translateY(-8px);
+	}
+	50% {
+	  -webkit-transform: translateY(-4px);
+	  transform: translateY(-4px);
+	}
+	100% {
+	  -webkit-transform: translateY(-8px);
+	  transform: translateY(-8px);
+	}
+}
+
+@keyframes Floating {
+	0% {
+	  -webkit-transform: translateY(-8px);
+	  transform: translateY(-8px);
+	}
+	50% {
+	  -webkit-transform: translateY(-4px);
+	  transform: translateY(-4px);
+	}
+	100% {
+	  -webkit-transform: translateY(-8px);
+	  transform: translateY(-8px);
+	}
+}
+
+@-webkit-keyframes Floating-float {
+	100% {
+	  -webkit-transform: translateY(-8px);
+	  transform: translateY(-8px);
+	}
+}
+
+@keyframes Floating-float {
+	100% {
+	  -webkit-transform: translateY(-8px);
+	  transform: translateY(-8px);
+	}
+}
+
+.lll {
+	margin-right: 5px;
+}
+
+.ll {
+	margin-left: 5px;
+	color: #adadad;
+}
+
+.l {
+	margin-right: 5px;
+	color: #adadad;
+}
