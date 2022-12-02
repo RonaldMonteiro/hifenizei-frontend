@@ -37,7 +37,7 @@ function Home(props) {
 	
 	async function getAnswer() {
 
-		const response = await axios.get(`http://localhost:5000/data?word=${input}`);
+		const response = await axios.get(`https://hifenizei-backend.onrender.com/data?word=${input}`);
 		const answer = response.data
 
 		if (answer.word === 'error') {
