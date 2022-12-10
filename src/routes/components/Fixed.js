@@ -16,7 +16,7 @@ import axios from "axios";
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
-import './components.css';
+import './FixesStyle.css';
 import ReportGmailerrorredOutlinedIcon from '@mui/icons-material/ReportGmailerrorredOutlined';
 const ButtonCustom = styled(Button)({
 	boxShadow: 'none',
@@ -91,7 +91,7 @@ DialogTitleCustom.propTypes = {
 };
 
 
-function Footer () {
+function Fixed () {
 	const [open, setOpen] = useState(false);
 	const [openTwo, setOpenTwo] = useState(false);
 
@@ -114,20 +114,20 @@ function Footer () {
 
 
     return (
-        <Box className='Footer'>
-            <Box className='BoxFooterOne'>
+        <Box className='Footers'>
+            <Box className='BoxFooterOnes'>
 
-                <Box className='BoxButton '>
+                <Box className='BoxButtons '>
                     <Link to="/about">
-                        <ButtonBase className='ButtonTexts'>
+                        <ButtonBase className='ButtonTextss'>
                             sobre
                         </ButtonBase>
                     </Link>
                 </Box>
 
-                <Box className='BoxButton Floating'>
+                <Box className='BoxButtons Floatings'>
                     <Link to="/help">
-                        <ButtonBase className='ButtonTexts'>
+                        <ButtonBase className='ButtonTextss'>
                             ajude
                         </ButtonBase>
                     </Link>
@@ -140,8 +140,8 @@ function Footer () {
                 </Box> */}
 
             </Box>
-            <Box className='BoxFooterTwo'>
-                <Stack className="opacity" direction={'row'} spacing={2}>
+            <Box className='BoxFooterTwos'>
+                <Stack className="opacitys" direction={'row'} spacing={2}>
                     {/* <a href="https://www.linkedin.com/in/ronaldmonteirooo" target="_blank" rel="noreferrer">
                     <IconButton aria-label="LinkedIn">
                         <LinkedIn/>
@@ -190,16 +190,16 @@ function Footer () {
       			>
         		<DialogTitleCustom id="customized-dialog-title" onClose={handleCloseTwo}>
                 <Stack  direction={'row'}>
-				<ReportGmailerrorredOutlinedIcon className='pad'/>
+				<ReportGmailerrorredOutlinedIcon className='pads'/>
                 {'Reportar'}
                 </Stack>
         		</DialogTitleCustom>
         		<DialogContent dividers>
           		<Typography gutterBottom>
-				<p className='pad2'>Caso o programa apresente algum problema ou incoerência na resposta, 
+				<p className='pad2s'>Caso o programa apresente algum problema ou incoerência na resposta, 
 				nos ajude a melhorá-lo e reporte por e-mail:</p>
                   <Stack  direction={'row'}>
-                  <EmailOutlinedIcon className='l'/>
+                  <EmailOutlinedIcon className='ls'/>
                 <strong className='colorgray'>{'contato@hifenizei.com.br'}</strong>
                 </Stack>
                   
@@ -212,4 +212,4 @@ function Footer () {
     )
 }
 
-export default Footer;
+export default Fixed;

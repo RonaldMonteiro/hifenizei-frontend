@@ -80,32 +80,46 @@ a:hover {
 	/* background-color: #f9f9fd; */
 }
 
+.InputeError {
+	border: 1px solid rgb(190, 10, 10);
+
+	/* background-color: #f5f5f7; */
+}
+  
+.InputeError:hover {
+	box-shadow: 1px 1px 9px 1px rgb(198, 196, 196);
+	border: 1px solid rgb(190, 10, 10);
+	/* box-shadow: 2px 2px 2px 0.5px rgb(178, 174, 174); */
+	/* border: 1px solid rgb(222, 219, 219); */
+	/* background-color: #f9f9fd; */
+}
+
   
 .Image {
-	width: 300px;
 	padding-bottom: -20px;
-	justify-content: start;
+	text-align: center;
 	animation: animImg 10s;
 
 
 }
 
 .ImageText {
-	width: 300px;
+	width: 270px;
 	padding-bottom: 50px;
 	padding-top: 20px;
-	justify-content: start;
+	justify-content: center;
+	text-align: center;
 	animation: animText 5s;
 
 }
 .Image1 {
-	width: 210px;
+	width: 190px;
 	padding-top: 15px;
 	animation: animImg1 2s;
 
 }
 .Image2 {
-	width: 18px;
+	width: 15px;
 	padding-top: 54px;
 	margin: 5px;
 	animation: animImg2 2s;
@@ -113,7 +127,7 @@ a:hover {
 	
 }
 .Image3 {
-	width: 65px;
+	width: 60px;
 	animation: animImg3 4s;
 
 	
@@ -233,11 +247,12 @@ a:hover {
 .ButtonText {
 	border: none;
 	background-color: inherit;
-	font-size: 16px;
+	/* font-size: 16px; */
 	cursor: pointer;
 	display: inline-block;
-	padding-right: 20px;
+	/* padding-right: 20px; */
 	animation: animBox1 7s;
+	width: 1%;
 
 }
 
@@ -284,17 +299,23 @@ a:hover {
 .Content {
 	border-radius: 20px;
 	border: 1px solid rgb(179, 175, 175);
-	padding: 30px;
+	padding: 10px;
 	animation: animCont 4s;
 	text-align: center;
+	height: 330px;
+	width: 280px;
+	padding-bottom: 15px;
+	margin-bottom: 5px;
 }
 
 .Contente {
 	border-radius: 20px;
 	border: 1px solid rgb(179, 175, 175);
-	padding: 40px;
-	height: 80px;
+	padding:10px;
+	padding-top: 30px;
+	height: 100px;
 	width: 280px;
+	
 	margin-bottom: 25px;
 
 
@@ -486,11 +507,11 @@ a:hover {
 	animation-direction: normal, alternate;
   }
 .input-with-hint {
-	padding: 0.85em 1em;
+	padding: 0.95em 1em;
 	border-color: transparent;
 	font-size: 12pt;
 	color: rgb(83, 82, 82);
-	width: 210px;
+	width: 185px;
 	border-radius: 30px;
 	background-color: transparent;
 	
@@ -511,6 +532,33 @@ a:hover {
 	  0 0 8px transparent;
 	
   }
+  .input-with-hint-two {
+	padding: 1.15em 1em;
+	border-color: transparent;
+	font-size: 11pt;
+	color: rgb(83, 82, 82);
+	width: 140px;
+	border-radius: 30px;
+	background-color: transparent;
+	
+  }
+.input-with-hint-two:hover {
+	border-color: transparent;
+	background-color:transparent;
+
+  }
+.input-with-hint-two:focus {
+	border-color: transparent;
+	background-color: transparent;
+
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px transparent,
+	  0 0 8px transparent;
+	box-shadow: inset 0 1px 1px transparent,
+	  0 0 8px transparent;
+	
+  }
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 	color: rgb(159, 157, 157);
 	opacity: 1; /* Firefox */
@@ -518,6 +566,8 @@ a:hover {
 
 .Card {
 	background-color: #eae5e5;
+
+	
 	;
 }
 

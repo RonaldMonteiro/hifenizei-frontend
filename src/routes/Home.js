@@ -37,8 +37,9 @@ function Home(props) {
 	
 	async function getAnswer() {
 
-		const response = await axios.get(`https://hifenizei-backend.onrender.com/data?word=${input}`);
+		const response = await axios.get(`http://localhost:5000/data?word=${input}`);
 		const answer = response.data
+		
 
 		if (answer.word === 'error') {
 			navigate("/")
@@ -103,7 +104,7 @@ function Home(props) {
 	  					display: 'flex', 
 	  					alignItems: 'center',
 						backgroundColor: '#f4f0f0', 
-	  					width: 300}}>
+	  					width: 270}}>
 					<Hint options={hintArray} allowTabFill>
         				<input
 							

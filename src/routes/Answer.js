@@ -1,3 +1,6 @@
+
+
+//problemas com a img de tem não tem hífen 
 import React, {useState} from 'react';
 
 import {
@@ -5,21 +8,25 @@ import {
 	Typography, Paper, InputBase, 
 	Divider, IconButton, Button, 
 	Link, Dialog, DialogTitle, DialogContent,
+	Alert, Snackbar
 } from '@mui/material';
 
 import CloseIcon from '@mui/icons-material/Close';
 import {Search} from '@mui/icons-material';
 import {useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Hint } from "react-autocomplete-hint";
 
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 
 import {useLocation} from "react-router-dom";
 
-import Footer from './components/Footer.js' ;
+import Fixed from './components/Fixed.js' ;
 import Header from './components/Header.js' ;
 import correct from './components/assets/iconCorrect.svg';
+import incorrect from './components/assets/iconIncorrect.svg';
+
 
 import './routes.css';
 
@@ -33,25 +40,22 @@ const ButtonCustom = styled(Button)({
 	borderRadius: 15,
 	lineHeight: 1.5,
 	backgroundColor: 'gray',
-	borderColor: 'gray',
-	border: '1px solid',
+	border: '1px solid transparent',
 	color: 'white',
 	marginTop: 40,
 
 
 	'&:hover': {
 	  backgroundColor: 'gray',
-	  borderColor: 'gray',
 	  color: 'white',
-	  border: '0px solid',
+	  border: '0px solid transparent',
 	  boxShadow: '1px 1px 9px 1px rgb(198, 196, 196)',
 	},
 	'&:active': {
 	  boxShadow: 'none',
 	  backgroundColor: 'gray',
 	  color: 'white',
-	  border: '0px solid',
-	  borderColor: 'gray',
+	  border: '0px solid transparent',
 	},
 	'&:focus': {
 		boxShadow: '1px 1px 9px 1px rgb(198, 196, 196)',
@@ -96,21 +100,49 @@ DialogTitleCustom.propTypes = {
 };
  
 function Answer() {
+	const navigate = useNavigate();
 
 	const location = useLocation();
 	const answer = location?.state?.word
+	const answerTwo = location?.state?.wordes
 
-	const [open, setOpen] = useState(false);
+
 	const [text, setText] = useState(" ");
+	const [inputCss,  setinputCss]  = useState('Inpute');
+	const [open, setOpen] = useState(false);  
+	const [answerHome, setAnswer] = useState(answer);
+	const [openTwo, setOpenTwo] = useState(false);
+
+ 
+  
+
+
 
 	async function getAnswer() {
 
-		const response = await axios.get(`http://localhost:5000/datas?word2=${answer}`);
+		const response = await axios.get(`http://localhost:5000/datas?word2=${answerHome}`);
 		const answer2 = response.data
 		setText(answer2.word2)
-		setOpen(true)		
+		setOpenTwo(true)		
 	}
 	
+	// async function getHifenizei() {
+
+	// 	const response = await axios.get(`http://localhost:5000/data?word=${input}`);
+	// 	const answer = response.data
+
+	// 	if (answer.word === 'error') {
+	// 		setOpen(true)
+	// 	} else {
+	// 		setAnswer(answer.word)
+
+	// 	}
+
+
+
+		
+		
+	// };
 	
 
 	const handleClickOpen = () => {
@@ -118,56 +150,129 @@ function Answer() {
 	};
 
 	const handleClose = () => {
-		setOpen(false);
+		setOpenTwo(false);
 	};
-	
+	const [input,  setInput]  = useState('');
+
+	var hintArray = ["micro-ondas", "antirracismo", 'má-fé'];
+	const handleInputChange = (event) => {
+		setInput(event.target.value)
+	};
+	const [image, setImage] = useState(correct); 
+
+	function onReload() {
+		let x = answerHome.includes('-')
+		console.log(answerHome)
+
+		if (x === false) {
+			console.log(false)
+			setImage(incorrect)
+			
+		} else {
+			setImage(correct)
+			console.log(true)
+
+
+		}
+
+	}
+
+	function myFunction(example) {
+		let x = example.includes('-')
+		console.log(example)
+
+		if (x === false) {
+			console.log(false)
+			setImage(incorrect)
+			
+		} else {
+			setImage(correct)
+			console.log(true)
+
+
+		}
+
+	}
+
+	async function getHifenizei() {
+
+		const response = await axios.get(`http://localhost:5000/data?word=${input}`);
+		const answer = response.data
+
+		if (answer.word === 'error') {
+			setOpen(true)
+		} else {
+			setAnswer(answer.word)
+			myFunction(answer.word)
+
+		}
+		// let w = answerHome.includes('-')
+
+		// if (w === false) {
+		// 	setImage(incorrect)
+			
+		// } else {
+		// 	setImage(correct)
+
+
+		// }
+
+
+		
+		
+	};
 	return (
 		<div>
-    		<header className='Header'>
+    		<header onLoad={onReload} className='Header'>
 
 			<Header></Header>
 
 			<Box className='Body'>
 				<div className='Contente '>
-				<Card elevation={0} sx={{ minWidth: 300, minHeight: 50, borderRadius:15 }}>
+				<Card elevation={0}>
 				<CardContent className='Card '>
 
 					<Paper 
-						className='Inpute'
+						className={inputCss}
 						elevation={0} 
 						component="form"
 						sx={{ 
-	  						p: '2px 8px',
+	  						p: '0px 2px',
 	  						backgroundColor:'#ffffff' , 
 	  						borderRadius: '30px', 
 	  						display: 'flex',
 	  						width: 240}}>
-						<InputBase
-	  				 		sx={{ ml: 2, flex: 1 }}
-					 		type='text'
-	  				 		placeholder="digite outra palavra..."
-	  						inputProps={{ 'aria-label': 'search google maps' }}
-						/>
-						<Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-						<IconButton type="button" sx={{ p: '10px' }} aria-label="search" >
+						<Hint options={hintArray} allowTabFill>
+        					<input
+          					className="input-with-hint-two"
+          					value={input}
+		  					placeholder='digite outra palavra...'
+          					onChange= {handleInputChange}//{(e) => setText(e.target.value)}
+        					/>
+      					</Hint>
+
+						<Divider sx={{ height: 28, m: 1 }} orientation="vertical" />
+						<IconButton type="button" sx={{ p: '10px' }} onClick={getHifenizei} aria-label="search" >
 	  						<Search />
 						</IconButton>
 					</Paper>
+
       			</CardContent>
 	  			</Card>
 				</div>
 				<div className='space'></div>
 				<div className='Content'>
-				<Card elevation={0} sx={{ minWidth: 300, minHeight: 300, borderRadius:15 }}>
+				<Card elevation={0}>
 				<CardContent className='Card'>
-       				<Typography sx={{ fontSize: 14, paddingTop:4 }} color="text.secondary" gutterBottom>
+       				<Typography sx={{ fontSize: 14, paddingTop:2 }} color="text.secondary" gutterBottom>
           				<i>a palavra correta é</i> 
         			</Typography>
         			<Typography  sx={{paddingTop:3, fontSize: 28}} variant="h5" component="div">
-          				{answer}
+          				{answerHome}
         			</Typography>
-					<img className='IconCorrect' src={correct} alt='correct'></img>
-        			<Typography    sx={{fontSize: 14}} variant="body2" color="text.secondary">
+					<img className='IconCorrect' src={image} alt='correct'></img>
+
+        			<Typography  sx={{fontSize: 14}} variant="body2" color="text.secondary">
 						<p className='Center'>Se você precisa de uma resposta mais<br/>
 						detalhada, clique aqui e <button className='ddd'><Link sx={{color:'gray'}} className='ddd' 
 						onClick={getAnswer} underline='none'><strong>saiba mais!</strong></Link></button></p>
@@ -180,13 +285,12 @@ function Answer() {
 				<DialogCustom
         			onClose={handleClose}
         			aria-labelledby="customized-dialog-title"
-        			open={open}
+        			open={openTwo}
       			>
         		<DialogTitleCustom id="customized-dialog-title" onClose={handleClose}>
-          			{answer || 'failed'}
+          			{answerHome}
         		</DialogTitleCustom>
         		<DialogContent dividers>
-				<img className='IconCorrect' src={correct} alt='correct'></img>
           		<Typography gutterBottom>
 					{text}
 
@@ -196,8 +300,12 @@ function Answer() {
 	  
 	
 			</Box>
-
-			<Footer></Footer>
+			<Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+        			<Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+          				Tente uma palavra válida!
+        			</Alert>
+			</Snackbar>
+			<Fixed></Fixed>
 
 			</header>		
 		</div>
