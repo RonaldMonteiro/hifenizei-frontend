@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 
-import Answer from "./routes/Answer";
-import About from "./routes/About";
-import Help from "./routes/Help";
-import Home from "./routes/Home";
+import Answer from "./Answer";
+import About from "./About";
+import Help from "./Help";
+import Home from "./Home";
 
-function App () {
+function Desktop () {
 	return (
 		<div>
 			<BrowserRouter>
@@ -21,7 +21,7 @@ function App () {
 	);
 }
 
-export default App;
+export default Desktop;
 
 
 

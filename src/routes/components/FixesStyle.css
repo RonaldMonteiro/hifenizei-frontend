@@ -1,0 +1,93 @@
+.Header {
+	min-height: 100vh;
+	background-color: #f4f0f0;
+	display: flex;
+	flex-direction: column;
+	font-size: calc(10px + 2vmin);
+	color: rgb(56, 56, 56);
+}
+ 
+.Footers {
+	height: 10vh;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+ 
+.ButtonTextss {
+	border: none;
+	background-color: transparent;
+	font-size: 16px;
+	cursor: pointer;
+	display: inline-block;
+	
+}
+
+
+  
+.ButtonTextss:hover {
+	background: rgb(163, 161, 161); 
+	border-radius: 15px;
+
+	
+
+}
+  
+.BoxButtons {
+	padding-left: 40px;
+}
+  
+.BoxFooterOnes {
+	flex: 100%;
+	height: 10vh;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-top: 2px solid #adadad;
+	z-index: 2;
+}
+  
+.BoxFooterTwos {
+	flex: 100%;
+	height: 10vh;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	border-top: 2px solid #adadad;
+	padding-right: 30px;
+	z-index: 2;
+}
+
+.ImageTop  {
+	height: 45px;
+	margin-top: 10px;
+}
+
+
+.lll {
+	margin-right: 5px;
+}
+
+.ll {
+	margin-left: 5px;
+	color: #adadad;
+}
+
+.ls {
+	margin-right: 5px;
+	color: #adadad;
+}
+
+.pads {
+	padding-top: 5px;
+	margin-right: 10px;
+}
+
+.pad2s {
+	margin-bottom: 25px;
+}

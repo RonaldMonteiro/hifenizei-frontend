@@ -31,7 +31,7 @@
 
 }
  
-.ButtonText {
+.ButtonTexts {
 	border: none;
 	background-color: transparent;
 	font-size: 16px;
@@ -50,7 +50,7 @@
 	}
 }
   
-.ButtonText:hover {
+.ButtonTexts:hover {
 	background: rgb(163, 161, 161); 
 	border-radius: 15px;
 
@@ -86,7 +86,7 @@
 }
 
 .ImageTop  {
-	height: 55px;
+	height: 45px;
 	margin-top: 10px;
 }
 
@@ -114,7 +114,7 @@
 	-webkit-animation-direction: normal, alternate;
 	animation-direction: normal, alternate;
 }
-  
+   
 
 @-webkit-keyframes Floating {
 	0% {
@@ -158,7 +158,7 @@
 	  -webkit-transform: translateY(-8px);
 	  transform: translateY(-8px);
 	}
-}
+} 
 
 .lll {
 	margin-right: 5px;
@@ -172,4 +172,13 @@
 .l {
 	margin-right: 5px;
 	color: #adadad;
+}
+
+.pad {
+	padding-top: 5px;
+	margin-right: 10px;
+}
+
+.pad2 {
+	margin-bottom: 25px;
 }

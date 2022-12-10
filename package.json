@@ -17,6 +17,7 @@
     "react-autocomplete-hint": "^2.0.0",
     "react-autocomplete-input": "^1.0.19",
     "react-dom": "^18.2.0",
+    "react-responsive": "^9.0.2",
     "react-scripts": "5.0.1",
     "react-scrollbars-custom": "^4.1.1",
     "styled-components": "^5.3.6",
