@@ -120,7 +120,7 @@ function Answer() {
 
 	async function getAnswer() {
 
-		const response = await axios.get(`http://localhost:5000/datas?word2=${answerHome}`);
+		const response = await axios.get(`https://hifenizei-backend.onrender.com/datas?word2=${answerHome}`);
 		const answer2 = response.data
 		setText(answer2.word2)
 		setOpenTwo(true)		
@@ -196,7 +196,7 @@ function Answer() {
 
 	async function getHifenizei() {
 
-		const response = await axios.get(`http://localhost:5000/data?word=${input}`);
+		const response = await axios.get(`https://hifenizei-backend.onrender.com/data?word=${input}`);
 		const answer = response.data
 
 		if (answer.word === 'error') {
