@@ -8,7 +8,7 @@ import {
 	Typography, Paper, InputBase, 
 	Divider, IconButton, Button, 
 	Link, Dialog, DialogTitle, DialogContent,
-	Alert, Snackbar
+	Alert, Snackbar, Stack
 } from '@mui/material';
 
 import CloseIcon from '@mui/icons-material/Close';
@@ -26,7 +26,8 @@ import Fixed from './components/Fixed.js' ;
 import Header from './components/Header.js' ;
 import correct from './components/assets/iconCorrect.svg';
 import incorrect from './components/assets/iconIncorrect.svg';
-
+import correctLine from './components/assets/iconCorrectLine.svg';
+import incorrectLine from './components/assets/iconIncorrectLine.svg';
 
 import './routes.css';
 
@@ -115,7 +116,9 @@ function Answer() {
 
  
   
-
+	function backNavigate() {
+		navigate('/')
+	}
 
 
 	async function getAnswer() {
@@ -152,13 +155,19 @@ function Answer() {
 	const handleClose = () => {
 		setOpenTwo(false);
 	};
+
+	const handleCloset = () => {
+		setOpen(false);
+	};
 	const [input,  setInput]  = useState('');
 
 	var hintArray = ["micro-ondas", "antirracismo", 'má-fé'];
 	const handleInputChange = (event) => {
 		setInput(event.target.value)
 	};
-	const [image, setImage] = useState(correct); 
+	const [image, setImage] = useState(correct);
+	const [imageLine, setImageLine] = useState(correctLine); 
+ 
 
 	function onReload() {
 		let x = answerHome.includes('-')
@@ -167,9 +176,13 @@ function Answer() {
 		if (x === false) {
 			console.log(false)
 			setImage(incorrect)
+			setImageLine(incorrectLine)
+
 			
 		} else {
 			setImage(correct)
+			setImageLine(correctLine)
+
 			console.log(true)
 
 
@@ -184,9 +197,14 @@ function Answer() {
 		if (x === false) {
 			console.log(false)
 			setImage(incorrect)
+			setImageLine(incorrectLine)
+
+			
 			
 		} else {
 			setImage(correct)
+			setImageLine(correctLine)
+
 			console.log(true)
 
 
@@ -270,14 +288,18 @@ function Answer() {
         			<Typography  sx={{paddingTop:3, fontSize: 28}} variant="h5" component="div">
           				{answerHome}
         			</Typography>
-					<img className='IconCorrect' src={image} alt='correct'></img>
+					<Stack direction={'row'}>
+					<img className='IconCorrect' src={imageLine} alt='correct'></img>
+					
 
+
+					</Stack>
         			<Typography  sx={{fontSize: 14}} variant="body2" color="text.secondary">
 						<p className='Center'>Se você precisa de uma resposta mais<br/>
 						detalhada, clique aqui e <button className='ddd'><Link sx={{color:'gray'}} className='ddd' 
 						onClick={getAnswer} underline='none'><strong>saiba mais!</strong></Link></button></p>
         			</Typography>
-					<ButtonCustom className='bob'>voltar</ButtonCustom>
+					<ButtonCustom className='bob' onClick={backNavigate} >voltar</ButtonCustom>
       			</CardContent>
 	  			</Card>
 				</div>
@@ -292,16 +314,22 @@ function Answer() {
         		</DialogTitleCustom>
         		<DialogContent dividers>
           		<Typography gutterBottom>
-					{text}
+				<Stack direction={'row'}>
 
+				  <img className='IconCorrectTwo' src={image} alt='correct'></img>
+				  </Stack>
+				  <Stack direction={'row'}>
+
+					{text}
+				</Stack>
           		</Typography>
         		</DialogContent>
       			</DialogCustom>
 	  
 	
 			</Box>
-			<Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
-        			<Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+			<Snackbar open={open} autoHideDuration={4000} onClose={handleCloset}>
+        			<Alert onClose={handleCloset} severity="error" sx={{ width: '100%' }}>
           				Tente uma palavra válida!
         			</Alert>
 			</Snackbar>

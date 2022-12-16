@@ -295,6 +295,18 @@ a:hover {
 	justify-content: center;
 }
 
+.IconCorrectTwo {
+	height: 22px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	
+	
+}
+
+.Line {
+	width: 100px;
+	
+}
 
 .Content {
 	border-radius: 20px;
