@@ -5,10 +5,14 @@ import Answer from "./routes/Answer";
 import About from "./routes/About";
 import Help from "./routes/Help";
 import Home from "./routes/Home";
+import { Analytics } from '@vercel/analytics/react';
 
-function App () {
+function App ({ Component, pageProps }) {
 	return (
 		<div>
+			<Component {...pageProps} />
+    		<Analytics />
+
 			<BrowserRouter>
 				<Routes>
 					<Route exact path="/" element={<Home />} />
