@@ -12,9 +12,9 @@ function App () {
 			<BrowserRouter>
 				<Routes>
 					<Route exact path="/" element={<Home />} />
-					<Route  path="answer" element={<Answer />} />
-					<Route  path="about"  element={<About />} />
-					<Route  path="help"   element={<Help />} />
+					<Route  path="resposta" element={<Answer />} />
+					<Route  path="sobre"  element={<About />} />
+					<Route  path="ajude"   element={<Help />} />
 				</Routes>
 			</BrowserRouter>
   		</div>

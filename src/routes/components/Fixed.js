@@ -118,7 +118,7 @@ function Fixed () {
             <Box className='BoxFooterOnes'>
 
                 <Box className='BoxButtons '>
-                    <Link to="/about">
+                    <Link to="/sobre">
                         <ButtonBase className='ButtonTextss'>
                             sobre
                         </ButtonBase>
@@ -126,7 +126,7 @@ function Fixed () {
                 </Box>
 
                 <Box className='BoxButtons Floatings'>
-                    <Link to="/help">
+                    <Link to="/ajude">
                         <ButtonBase className='ButtonTextss'>
                             ajude
                         </ButtonBase>
@@ -200,7 +200,7 @@ function Fixed () {
 				nos ajude a melhorá-lo e reporte por e-mail:</p>
                   <Stack  direction={'row'}>
                   <EmailOutlinedIcon className='ls'/>
-                <strong className='colorgray'>{'contato@hifenizei.com.br'}</strong>
+                <strong className='colorgray'>hifenizei@gmail.com</strong>
                 </Stack>
                   
           		</Typography>

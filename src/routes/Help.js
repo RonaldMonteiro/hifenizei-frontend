@@ -40,7 +40,7 @@ function Help() {
 				<Typography>
 				<div className='out'>
 				Caso queira contribuir ajudando nos gastos do site, ou me pagando um sorvete, 
-				você pode enviar um <i>pix</i> de qualquer valor para <strong>ronald.dev@gmail.com</strong>.  E se você é programador 
+				você pode enviar um <i>pix</i> de qualquer valor para <strong>hifenizei@gmail.com</strong>.  E se você é programador 
 				ou letrólogo e quer colaborar de alguma forma, entre em contato por e-mail. 
 
 

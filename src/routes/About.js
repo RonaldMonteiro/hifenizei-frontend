@@ -45,7 +45,7 @@ function About() {
 				<div className='out'>
 				Na busca por uma solução,  o <i>hifeniz<strong>.ei</strong></i> foi pensado. Um programa 
 				simples de processamento natural de linguagem que identifica palavras 
-				compostas por justaposição e aglutinação, aplicando a elas as regras de 
+				compostas por justaposição ou aglutinação, e aplica a elas as regras de 
 				hifenização vigentes no novo acordo ortográfico.
 
 

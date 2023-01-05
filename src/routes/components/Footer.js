@@ -118,7 +118,7 @@ function Footer () {
             <Box className='BoxFooterOne'>
 
                 <Box className='BoxButton '>
-                    <Link to="/about">
+                    <Link to="/sobre">
                         <ButtonBase className='ButtonTexts'>
                             sobre
                         </ButtonBase>
@@ -126,7 +126,7 @@ function Footer () {
                 </Box>
 
                 <Box className='BoxButton Floating'>
-                    <Link to="/help">
+                    <Link to="/resposta">
                         <ButtonBase className='ButtonTexts'>
                             ajude
                         </ButtonBase>
@@ -200,7 +200,7 @@ function Footer () {
 				nos ajude a melhorá-lo e reporte por e-mail:</p>
                   <Stack  direction={'row'}>
                   <EmailOutlinedIcon className='l'/>
-                <strong className='colorgray'>{'contato@hifenizei.com.br'}</strong>
+                <strong className='colorgray'>hifenizei@gmail.com</strong>
                 </Stack>
                   
           		</Typography>
